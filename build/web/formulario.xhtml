@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:messages/>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nome"/>
+                <h:inputText value="#{controleFormulario.nome}" size="40" maxlength="40"
+                             required="true" requiredMessage="O campo nome é obrigatório"/>
+                <h:outputLabel value="Email:"/>
+                <h:inputText value="#{controleFormulario.email}" size="40" maxlength="40" 
+                             required="true" requiredMessage="É obrigatório informar o email"/>
+                <h:outputLabel value="Data de Nascimento:" />
+                <h:inputText value="#{controleFormulario.dataNascimento}" size="12"
+                             maxlength="12" required="true"  requiredMessage="O campo data de nascimento é obrigatório">
+                    <f:converter converterId="converterCalendar" />  
+                <h:inputText />    
+                <h:commandButton value="Processa" action="#{controleFormulario.processarFormulario()}"/>
+            </h:panelGrid>
+        </h:form>        
+    </h:body>
+</html>
+
